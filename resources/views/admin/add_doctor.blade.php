@@ -112,10 +112,10 @@
                                             <select name="speciality" id=""
                                                 class="form-control bg-white text-dark" value="">
                                                 <option value="">General Health</option>
-                                                <option value="skin">Cardiology</option>
-                                                <option value="heart">Dental</option>
-                                                <option value="eye">Neurology</option>
-                                                <option value="nose">Orthopaedics</option>
+                                                <option value="Cardiology">Cardiology</option>
+                                                <option value="Dental">Dental</option>
+                                                <option value="Neurology">Neurology</option>
+                                                <option value="Orthopaedics">Orthopaedics</option>
                                             </select>
                                             @error('speciality')
                                                 <p class="text-danger">{{ $message }}</p>

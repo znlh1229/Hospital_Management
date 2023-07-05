@@ -28,14 +28,22 @@
                  </a>
              </li>
              <li class="nav-item menu-items">
-                 <a class="nav-link" href="pages/tables/basic-table.html">
+                 <a class="nav-link" href="{{ url('check_appointment') }}">
                      <span class="menu-icon">
                          <i class="mdi mdi-table-large"></i>
                      </span>
-                     <span class="menu-title"> Doctor List</span>
+                     <span class="menu-title"> Appointments</span>
                  </a>
              </li>
              <li class="nav-item menu-items">
+                 <a class="nav-link" href="{{ url('doctor_list') }}">
+                     <span class="menu-icon">
+                         <i class="mdi mdi-chart-bar"></i>
+                     </span>
+                     <span class="menu-title">Doctor List</span>
+                 </a>
+             </li>
+             {{-- <li class="nav-item menu-items">
                  <a class="nav-link" href="pages/charts/chartjs.html">
                      <span class="menu-icon">
                          <i class="mdi mdi-chart-bar"></i>
@@ -73,15 +81,7 @@
                              </a></li>
                      </ul>
                  </div>
-             </li>
-             <li class="nav-item menu-items">
-                 <a class="nav-link"
-                     href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
-                     <span class="menu-icon">
-                         <i class="mdi mdi-file-document-box"></i>
-                     </span>
-                     <span class="menu-title">Documentation</span>
-                 </a>
-             </li>
+             </li> --}}
+
          </ul>
      </nav>

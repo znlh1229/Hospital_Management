@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,13 @@ Route::post('/appointment', [HomeController::class, 'appointment']);
 Route::get('/show_appointment', [HomeController::class, 'show_appointment']);
 
 Route::get('/cancel_appointment/{id}', [HomeController::class, 'cancel_appointment']);
+
+Route::get('/check_appointment', [AdminController::class, 'check_appointment']);
+
+Route::get('/approved/{id}', [AdminController::class, 'approved']);
+
+Route::get('/cancel/{id}', [AdminControllerController::class, 'cancel']);
+
+Route::get('/doctor_list', [DoctorController::class, 'doctor_list']);
+
+Route::get('/delete_doctor/{id}', [DoctorController::class, 'delete_doctor']);
