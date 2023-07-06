@@ -59,3 +59,5 @@ Route::get('/cancel/{id}', [AdminControllerController::class, 'cancel']);
 Route::get('/doctor_list', [DoctorController::class, 'doctor_list']);
 
 Route::get('/delete_doctor/{id}', [DoctorController::class, 'delete_doctor']);
+Route::get('/update_doctor/{id}', [DoctorController::class, 'update_doctor']);
+Route::post('/edit_doctor/{id}', [DoctorController::class, 'edit_doctor']);

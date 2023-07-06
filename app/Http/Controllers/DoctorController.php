@@ -22,4 +22,30 @@ class DoctorController extends Controller
 
         return redirect()->back()->with('doctor', 'Delete doctor is Successful');
     }
+
+    public function update_doctor($id)
+    {
+        $data = Doctor::find($id);
+        return view('admin.edit_doctor', compact('data'));
+    }
+
+    public function edit_doctor(Request $request, $id)
+    {
+
+        $doctor = Doctor::find($id);
+        $doctor->name = $request->name;
+        $doctor->phone = $request->phone;
+        $doctor->speciality = $request->speciality;
+        $doctor->room = $request->room;
+        $image = $request->image;
+        if ($image) {
+
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('doctorimage', $imagename);
+            $doctor->image = $imagename;
+        }
+
+        $doctor->save();
+        return redirect()->back()->with('success', 'Edit Doctor is Successful....');
+    }
 }

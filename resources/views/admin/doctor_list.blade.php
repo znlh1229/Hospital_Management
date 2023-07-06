@@ -36,12 +36,6 @@
                             <th scope="col">Image</th>
 
                             <th scope="col">Action</th>
-
-
-
-
-
-
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +55,7 @@
 
                                 {{-- <td>{{ $data->message }}</td>
                                 <td>{{ $data->status }}</td> --}}
-                                <td><a href="{{ url('edit_doctor', $data->id) }}" class="btn btn-success">Edit</a>
+                                <td><a href="{{ url('update_doctor', $data->id) }}" class="btn btn-success">Edit</a>
                                     <a href="{{ url('delete_doctor', $data->id) }}" class="btn btn-danger"
                                         onclick="return confirm('Are you sure your want to delete ?')">Delete</a>
                                 </td>

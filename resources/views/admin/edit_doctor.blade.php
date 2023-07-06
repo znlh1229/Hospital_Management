@@ -17,7 +17,6 @@
 
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
             <div class="container mt-6">
-                <h1 class="text-danger">Add Doctors</h1>
 
                 <div class="contact__wrapper shadow-lg my-5">
                     <div class="row no-gutters my-5">
@@ -70,14 +69,14 @@
                         </div>
 
                         <div class="col-lg-7  contact-form__wrapper p-5 order-lg-1">
-                            <h1 class="text-white " style="font-size: 30px">Add Doctor</h1>
+                            <h1 class="text-white " style="font-size: 30px">Edit Doctor</h1>
                             @if ($message = Session::get('success'))
                                 <div class="alert alert-success alert-block">
                                     <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @endif
-                            <form action="{{ url('upload_doctor') }}" class="contact-form form-validate my-5"
+                            <form action="{{ url('edit_doctor', $data->id) }}" class="contact-form form-validate my-5"
                                 novalidate="novalidate" enctype="multipart/form-data" method="POST">
                                 @csrf
                                 <div class="row ">
@@ -85,39 +84,27 @@
                                         <div class="form-group">
                                             <label class="required-field" for="firstName">Doctor Name</label>
                                             <input type="text" class="form-control bg-white text-dark" id="firstName"
-                                                name="name">
-                                            @error('name')
-                                                <p class="text-danger">{{ $message }}</p>
-                                            @enderror
+                                                name="name" value="{{ $data->name }}">
+
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6 mb-3">
                                         <div class="form-group">
                                             <label for="lastName">Phone</label>
-                                            <input type="text" class="form-control bg-white text-dark" id="lastName"
-                                                name="phone">
-                                            @error('phone')
-                                                <p class="text-danger">{{ $message }}</p>
-                                            @enderror
+                                            <input type="number" class="form-control bg-white text-dark" id="lastName"
+                                                name="phone" value="{{ $data->phone }}">
+
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6 mb-3">
                                         <div class="form-group">
                                             <label class="required-field " for="email">Speciality</label>
+                                            <input type="text" class="form-control bg-white text-dark" id="lastName"
+                                                name="speciality" value="{{ $data->speciality }}">
 
-                                            <select name="speciality" id=""
-                                                class="form-control bg-white text-dark" value="">
-                                                <option value="">General Health</option>
-                                                <option value="Cardiology">Cardiology</option>
-                                                <option value="Dental">Dental</option>
-                                                <option value="Neurology">Neurology</option>
-                                                <option value="Orthopaedics">Orthopaedics</option>
-                                            </select>
-                                            @error('speciality')
-                                                <p class="text-danger">{{ $message }}</p>
-                                            @enderror
+
                                         </div>
                                     </div>
 
@@ -125,28 +112,34 @@
                                         <div class="form-group">
                                             <label for="room">Room Number</label>
                                             <input type="text" class="form-control bg-white text-dark" id="room"
-                                                name="room">
-                                            @error('room')
-                                                <p class="text-danger">{{ $message }}</p>
-                                            @enderror
+                                                name="room" <input type="text"
+                                                class="form-control bg-white text-dark" id="lastName" name="phone"
+                                                value="{{ $data->room }}">>
+
                                         </div>
                                     </div>
 
+
                                     <div class="col-sm-12 mb-3">
                                         <div class="form-group">
-                                            <label for="room">Doctor Image</label>
-                                            <input type="file" class="form-control bg-white text-dark"
-                                                id="room" name="image">
-                                            @error('image')
-                                                <p class="text-danger">{{ $message }}</p>
-                                            @enderror
+                                            <label for="room">Old Image</label>
+                                            <img src="/doctorimage/{{ $data->image }}" alt=""
+                                                style="width: 150px;height:150px">
+                                        </div>
+
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label for="room">Change Image</label>
+                                                <input type="file" class="form-control bg-white text-dark"
+                                                    id="room" name="image">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 mb-3">
+                                            <button type="submit" name="submit" class="btn btn-primary">Edit
+                                                Doctor</button>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <button type="submit" name="submit" class="btn btn-primary">Add
-                                            Doctor</button>
-                                    </div>
-                                </div>
                             </form>
                         </div>
 
